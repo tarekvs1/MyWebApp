@@ -8,9 +8,7 @@ pipeline{
                 if (!fileExists("index.html")){
                     error 'index.html is missing'
                 }
-                if (!fileExists("style.html")){
-                    error 'style.html is missing'
-                }
+                
                 if (!fileExists("style.html")){
                     error 'style.html is missing'
                 }
