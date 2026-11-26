@@ -5,29 +5,27 @@ pipeline{
             steps{
                 echo "checking project files..."
                 script{
-                /*if (!fileExists("index.html")){
-                    error 'index.html is missing'
-                }
-                if (!fileExists("style.html")){
-                    error 'style.html is missing'
-                }
-                if (!fileExists("style.html")){
-                    error 'style.html is missing'
-                }*/
-                
-                
-                def requiredFiles=[
-                "index.html",
-                "style.css",
-                "script.js"
-                ]
-                for (String file : requiredFiles){
-                    if(!fileExists(file)){
-                        error "missing file ${file}"
-                    }
-                }
-                echo "${file} exists"
-                echo "all required files are available"
+                stage('Required Files') {
+                    steps {
+                        echo 'Checking project files...'
+
+        script {
+            if (!fileExists('index.html')) {
+                error 'index.html is missing!'
+            }
+
+            if (!fileExists('style.css')) {
+                error 'style.css is missing!'
+            }
+
+            if (!fileExists('script.js')) {
+                error 'script.js is missing!'
+            }
+        }
+
+        echo 'All required files are available!'
+    }
+}
                 
                 
                 
