@@ -21,7 +21,7 @@ pipeline{
                 "style.css",
                 "script.js"
                 ]
-                for (file in requiredFiles){
+                for (String file : requiredFiles){
                     if(!fileExists(file)){
                         error "missing file ${file}"
                     }
