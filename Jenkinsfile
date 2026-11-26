@@ -16,6 +16,24 @@ pipeline{
                     if (!fileExists('script.js')) {
                         error 'script.js is missing!'
                     }
+                    /*
+    def requiredFiles = [
+        'index.html',
+        'style.css',
+        'script.js'
+    ]
+
+    for (String file : requiredFiles) {
+
+        if (!fileExists(file)) {
+            error "Required file is missing: ${file}"
+        }
+
+        echo "${file} exists!"
+    }
+
+*/
+
                 }
 
                 echo 'All required files are available!'
