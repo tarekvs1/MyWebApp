@@ -5,34 +5,30 @@ pipeline{
             steps{
                 echo "checking project files..."
                 script{
-                stage('Required Files') {
-                    steps {
-                        echo 'Checking project files...'
+                    if (!fileExists('index.html')) {
+                        error 'index.html is missing!'
+                    }
 
-        script {
-            if (!fileExists('index.html')) {
-                error 'index.html is missing!'
-            }
+                    if (!fileExists('style.css')) {
+                        error 'style.css is missing!'
+                    }
 
-            if (!fileExists('style.css')) {
-                error 'style.css is missing!'
-            }
-
-            if (!fileExists('script.js')) {
-                error 'script.js is missing!'
-            }
-        }
-
-        echo 'All required files are available!'
-    }
-}
-                
-                
-                
+                    if (!fileExists('script.js')) {
+                        error 'script.js is missing!'
+                    }
                 }
-            }
 
+                echo 'All required files are available!'
+                }
         }
+        
+                
+                
+                
+                
+            
+
+        
         stage("javascript-test"){
             steps {
                 echo 'checking javascript syntax...'
@@ -57,5 +53,5 @@ pipeline{
             echo "deploying completed"
             }
         }
-}
+    }
 }
