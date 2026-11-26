@@ -16,7 +16,7 @@ pipeline{
                 }*/
                 
                 
-                def requiredFiles[
+                def requiredFiles=[
                 "index.html",
                 "style.css",
                 "script.js"
