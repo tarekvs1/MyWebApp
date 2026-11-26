@@ -5,15 +5,17 @@ pipeline{
             steps{
                 echo "checking project files..."
                 script{
-                if (!fileExists("index.html")){
+                /*if (!fileExists("index.html")){
                     error 'index.html is missing'
                 }
-                
                 if (!fileExists("style.html")){
                     error 'style.html is missing'
                 }
-                /*
-                or
+                if (!fileExists("style.html")){
+                    error 'style.html is missing'
+                }*/
+                
+                
                 def requiredFiles[
                 "index.html",
                 "style.css",
@@ -28,7 +30,7 @@ pipeline{
                 echo "all required files are available"
                 
                 
-                */
+                
                 }
             }
 
