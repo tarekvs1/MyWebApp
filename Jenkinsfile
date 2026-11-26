@@ -22,7 +22,7 @@ pipeline{
                 "script.js"
                 ]
                 for (file in requiredFiles){
-                    if(!fileExits(file)){
+                    if(!fileExists(file)){
                         error "missing file ${file}"
                     }
                 }
