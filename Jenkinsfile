@@ -4,7 +4,15 @@ pipeline{
         stage("build"){
             steps{
                 echo "building MyWebApp..."
-                echo "project preparation completed"
+                if (fileExists("index.html")){
+                    error 'index.html is missing'
+                }
+                if (fileExists("style.html")){
+                    error 'style.html is missing'
+                }
+                if (fileExists("style.html")){
+                    error 'style.html is missing'
+                }
             }
         }
         stage("test"){
